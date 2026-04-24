@@ -238,7 +238,7 @@
         document.getElementById('qrModal').style.display = 'flex';
     }
     function closeQR() {
-        document.getElementById('qrModal').style.display = 'none';
+        document.getElementById('qrModal').style.display = 'flex';
     }
     window.onclick = function(event) {
         var modal = document.getElementById('qrModal');

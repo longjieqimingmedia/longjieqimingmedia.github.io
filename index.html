@@ -6,179 +6,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宅家高效工作指南 | 7天从拖延到自律</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9fafb;
-        }
-        .header {
-            text-align: center;
-            padding: 40px 0;
-            background: white;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        }
-        .cover-img {
-            width: 200px;
-            height: 280px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0 auto 20px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-        h1 {
-            color: #1a1a2e;
-            margin: 10px 0;
-            font-size: 28px;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 18px;
-        }
-        .price-box {
-            background: #fff7ed;
-            border: 2px solid #f97316;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .price {
-            font-size: 48px;
-            font-weight: bold;
-            color: #ea580c;
-        }
-        .buy-btn {
-            display: block;
-            background: #f97316;
-            color: white;
-            text-decoration: none;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 15px 0 10px;
-            transition: background 0.3s;
-        }
-        .buy-btn:hover {
-            background: #ea580c;
-        }
-        .section {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        }
-        h2 {
-            color: #1a1a2e;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        .benefit-list {
-            list-style: none;
-            padding: 0;
-        }
-        .benefit-list li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-        }
-        .benefit-list li:before {
-            content: "✓";
-            color: #10b981;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        .chapters {
-            list-style: none;
-            padding: 0;
-        }
-        .chapters li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #e5e7eb;
-            display: flex;
-            align-items: center;
-        }
-        .chapters li:last-child {
-            border-bottom: none;
-        }
-        .chapter-num {
-            background: #667eea;
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            font-weight: bold;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-        .faq {
-            margin: 10px 0;
-            padding: 15px;
-            background: #f8fafc;
-            border-radius: 8px;
-        }
-        .faq strong {
-            color: #1a1a2e;
-        }
-        .guarantee {
-            text-align: center;
-            color: #6b7280;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: #9ca3af;
-            font-size: 14px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 700px; margin: 0 auto; padding: 20px; background-color: #f9fafb; }
+        .header { text-align: center; padding: 40px 0; background: white; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+        .cover-img { width: 200px; height: 280px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0 auto 20px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: bold; box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
+        h1 { color: #1a1a2e; margin: 10px 0; font-size: 28px; }
+        .subtitle { color: #666; font-size: 18px; }
+        .price-box { background: #fff7ed; border: 2px solid #f97316; border-radius: 12px; padding: 25px; margin: 30px 0; text-align: center; }
+        .price { font-size: 48px; font-weight: bold; color: #ea580c; }
+        .buy-btn { display: block; background: #f97316; color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-size: 20px; font-weight: bold; margin: 15px auto 10px; cursor: pointer; transition: background 0.3s; border: none; width: 100%; max-width: 350px; }
+        .buy-btn:hover { background: #ea580c; }
+        .section { background: white; border-radius: 12px; padding: 30px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+        h2 { color: #1a1a2e; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-top: 0; }
+        .benefit-list { list-style: none; padding: 0; }
+        .benefit-list li { padding: 8px 0; padding-left: 24px; position: relative; }
+        .benefit-list li:before { content: "✓"; color: #10b981; font-weight: bold; position: absolute; left: 0; }
+        .chapters { list-style: none; padding: 0; }
+        .chapters li { padding: 10px 0; border-bottom: 1px dashed #e5e7eb; display: flex; align-items: center; }
+        .chapters li:last-child { border-bottom: none; }
+        .chapter-num { background: #667eea; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+        .faq { margin: 10px 0; padding: 15px; background: #f8fafc; border-radius: 8px; }
+        .faq strong { color: #1a1a2e; }
+        .guarantee { text-align: center; color: #6b7280; font-size: 14px; margin-top: 10px; }
+        .footer { text-align: center; padding: 30px; color: #9ca3af; font-size: 14px; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center; }
+        .modal-content { background: white; border-radius: 12px; padding: 30px; text-align: center; max-width: 400px; width: 90%; }
+        .modal-content img { width: 250px; height: 250px; margin: 15px 0; }
+        .close-btn { background: #6b7280; color: white; border: none; padding: 10px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; margin-top: 10px; }
+        .close-btn:hover { background: #4b5563; }
     </style>
 </head>
 <body>
 
-    <!-- 头部区域 -->
-    <div class="header">
-        <div class="cover-img">📚 封面预览</div>
-        <h1>宅家高效工作指南</h1>
-        <p class="subtitle">从拖延到自律的7天计划</p >
-    </div>
+<div class="header">
+    <div class="cover-img">📚 封面预览</div>
+    <h1>宅家高效工作指南</h1>
+    <p class="subtitle">从拖延到自律的7天计划</p >
+</div>
 
-    <!-- 购买区域 -->
-    <div class="price-box">
-        <p style="margin:0; color:#666;">限时优惠价</p >
-        <p class="price">¥9.9</p >
-        <p style="color:#666; margin:5px 0;">原价 ¥29.9</p >
-        
-        <!-- 🔴 这里替换成你的 PayPal 或 Stripe 支付链接 -->
-        <a href=
-        "https://www.paypal.com/你的支付链接" class="buy-btn">🛒 立即购买 (PayPal)</a >        <p class="guarantee">💳 安全支付 · 30天无理由退款</p >
-    </div>
+<div class="price-box">
+    <p style="margin:0; color:#666;">限时优惠价</p >
+    <p class="price">¥9.9</p >
+    <p style="color:#666; margin:5px 0;">原价 ¥29.9</p >
+    <!-- 🔴 点击按钮会弹出收款码 -->
+    <button class="buy-btn" onclick="openQR()">🛒 立即购买</button>
+    <p class="guarantee">💳 支持支付宝/微信扫码支付 · 30天无理由退款</p >
+</div>
 
-    <!-- 书籍简介 -->
-    <div class="section">
-        <h2>📖 这本书能帮你解决什么？</h2>
-        <p>在家里工作或学习，总是不自觉地开始刷手机、吃零食、发呆……一天过去，任务清单上的事一件都没做完。</p >
-        <p>这本书不是空泛的时间管理理论，而是一套<strong>专为居家场景设计的7天实操计划</strong>。每天一个小目标，帮你重塑专注力，找回对生活的掌控感。</p >
-        
-        <ul class="benefit-list">
-            <li>学会用「环境设计」而非意志力来抵抗诱惑</li>
-            <li>掌握快速进入专注状态的「5分钟法则」</li
+<div class="section">
+    <h2>📖 这本书能帮你解决什么？</h2>
+    <p>在家里工作或学习，总是不自觉地开始刷手机、吃零食、发呆……一天过去，任务清单上的事一件都没做完。</p >
+    <p>这本书不是空泛的时间管理理论，而是一套<strong>专为居家场景设计的7天实操计划</strong>。每天一个小目标，帮你重塑专注力，找回对生活的掌控感。</p >
+    <ul class="benefit-list">
+        <li>学会用「环境设计」而非意志力来抵抗诱惑</li>
+        <li>掌握快速进入专注状态的「5分钟法则」</li>
+        <li>告别 To-do List 焦虑，改用更轻松的「完成日志」</li>
+        <li>建立适合自己节奏的居家工作仪式感</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>📑 目录预览</h2>
+    <ul class="chapters">
+        <li><span class="chapter-num">D1</span> 重塑你的工作环境 —— 三区分离法</li>
+        <li><span class="chapter-num">D2</span> 识别你的效率峰值 —— 什么时候工作最投入？</li>
+        <li><span class="chapter-num">D3</span> 吃掉那只青蛙 —— 攻克最难任务</li>
+        <li><span class="chapter-num">D4</span> 番茄工作法实操 —— 从25分钟开始</li>
+        <li><span class="chapter-num">D5</span> 数字极简 —— 给手机和大脑减负</li>
+        <li><span class="chapter-num">D6</span> 精力管理而非时间管理 —— 学会主动休息</li>
+        <li><span class="chapter-num">D7</span> 建立你的「不完美」系统 —— 长期自律的秘密</li>
+    </ul>
+    <p style="text-align:center; color:#667eea; margin-top:15px;">📄 共 58 页，约 25,000 字，PDF 格式</p >
+</div>
+
+<div class="section">
+    <h2>👤 关于作者</h2>
+    <p>一位从严重拖延症转变为自律达人的普通人。经过两年亲身实践，总结出这套不依赖意志力的居家工作方法。相信每个人都能找到属于自己的高效节奏。</p >
+</div>
+
+<div class="section">
+    <h2>❓ 常见问题</h2>
+    <div class="faq"><strong>Q: 这本书适合什么样的人？</strong><br>A: 只要你经常在家办公或学习，容易被分心困扰，这本书就适合你。不需要任何基础。</div>
+    <div class="faq"><strong>Q: 购买后如何收到电子书？</strong><br>A: 支付成功后，系统会将 PDF 电子书发送到您的邮箱。如果没有收到，请检查垃圾邮件箱或联系我们。</div>
+    <div class="faq"><strong>Q: 可以退款吗？</strong><br>A: 当然可以！购买后 30 天内，如果你觉得没有收获，全额退款，无需理由。</div>
+</div>
+
+<!-- 🔴 弹出的收款码浮层（引用你昨天上传的收款码图片） -->
+<div id="qrModal" class="modal">
+    <div class="modal-content">
+        <h3>📱 扫码支付 ¥9.90</h3>
+        <p style="color:#666;">支持支付宝 / 微信 / 农行扫码付</p >
+        <!-- 重要：请确保图片已上传到仓库，文件名与路径完全一致 -->
+        <!-- 使用 GitHub 仓库内的图片相对路径，兼容性最好 -->
+        < img src="mmexport1711982891801.jpg" alt="收款码" style="width:250px; height:250px; margin:15px 0;" onerror="this.style.display='none'; this.parentNode.querySelector('.qr-fallback').style.display='block';">
+        <p class="qr-fallback" style="display:none; color:#ea580c; font-weight:bold;">收款码图片未加载。<br>请将文件 mmexport1711982891801.jpg 上传到仓库根目录。</p >
+        <p style="font-size:13px; color:#999; margin-top:10px;">付款完成后请截图保存，电子书将在24小时内发送</p >
+        <button class="close-btn" onclick="closeQR()">关闭</button>
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 我的电子书小铺 · Powered by GitHub Pages
+</div>
+
+<script>
+    function openQR() {
+        document.getElementById('qrModal').style.display = 'flex';
+    }
+    function closeQR() {
+        document.getElementById('qrModal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+        var modal = document.getElementById('qrModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

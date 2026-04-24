@@ -47,7 +47,7 @@
     <p style="margin:0; color:#666;">限时优惠价</p >
     <p class="price">¥9.9</p >
     <p style="color:#666; margin:5px 0;">原价 ¥29.9</p >
-    <!-- 🔴 点击按钮会弹出收款码 -->
+    <!-- ⚠️ 已自动匹配你仓库里的 WechatIMG71.jpg -->
     <button class="buy-btn" onclick="openQR()">🛒 立即购买</button>
     <p class="guarantee">💳 支持支付宝/微信扫码支付 · 30天无理由退款</p >
 </div>
@@ -90,15 +90,13 @@
     <div class="faq"><strong>Q: 可以退款吗？</strong><br>A: 当然可以！购买后 30 天内，如果你觉得没有收获，全额退款，无需理由。</div>
 </div>
 
-<!-- 🔴 弹出的收款码浮层（引用你昨天上传的收款码图片） -->
+<!-- ⚠️ 收款码浮层已更新为使用你仓库里的文件名 -->
 <div id="qrModal" class="modal">
     <div class="modal-content">
         <h3>📱 扫码支付 ¥9.90</h3>
         <p style="color:#666;">支持支付宝 / 微信 / 农行扫码付</p >
-        <!-- 重要：请确保图片已上传到仓库，文件名与路径完全一致 -->
-        <!-- 使用 GitHub 仓库内的图片相对路径，兼容性最好 -->
-        < img src="mmexport1711982891801.jpg" alt="收款码" style="width:250px; height:250px; margin:15px 0;" onerror="this.style.display='none'; this.parentNode.querySelector('.qr-fallback').style.display='block';">
-        <p class="qr-fallback" style="display:none; color:#ea580c; font-weight:bold;">收款码图片未加载。<br>请将文件 mmexport1711982891801.jpg 上传到仓库根目录。</p >
+        < img src="WechatIMG71.jpg" alt="收款码" style="width:250px; height:250px; margin:15px 0;" onerror="this.style.display='none'; this.parentNode.querySelector('.qr-fallback').style.display='block';">
+        <p class="qr-fallback" style="display:none; color:#ea580c; font-weight:bold;">收款码图片未加载。<br>请确保文件 WechatIMG71.jpg 已上传。</p >
         <p style="font-size:13px; color:#999; margin-top:10px;">付款完成后请截图保存，电子书将在24小时内发送</p >
         <button class="close-btn" onclick="closeQR()">关闭</button>
     </div>

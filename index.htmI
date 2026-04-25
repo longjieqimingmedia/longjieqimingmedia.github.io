@@ -201,7 +201,10 @@
   <div class="modal-content">
     <h3>📱 扫码支付 ¥9.90</h3>
     <p style="color:#666;">支持支付宝 / 微信 / 云闪付</p >
-    <img src="WechatIMG71.jpg" alt="农行收款二维码" id="qrcodeImg">
+ <img src="https://s41.ax1x.com/2026/04/pefacCD.jpg" 
+     alt="收款二维码" 
+     id="qrcodeImg"
+     style="width: 220px; height: 220px; display: block; margin: 15px auto; border-radius: 8px;">
     <p style="font-size: 12px; color: #999;">支付后请截图并发送到邮箱 468404681@qq.com，我们将在5分钟内发送PDF</p >
     <button class="close-btn" onclick="closeQR()">关闭</button>
   </div>
@@ -234,3 +237,4 @@
     </script>
 </body>
 </html>
+update qrcode

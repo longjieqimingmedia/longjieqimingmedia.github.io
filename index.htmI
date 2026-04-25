@@ -223,7 +223,7 @@
 
     <script>
         function openQR() {
-            document.getElementById('qrModal').style.display = 'flex';
+            document.getElementByid('qrModal').style.display = 'flex';
         }
         function closeQR() {
             document.getElementById('qrModal').style.display = 'none';

@@ -153,8 +153,7 @@
             cursor: pointer;
         }
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
+            from {< img src="WechatIMG103.jpg" alt="农行收款二维码" id="qrcodeImg">                opacity: 0;
                 transform: translateY(30px);
             }
             to {

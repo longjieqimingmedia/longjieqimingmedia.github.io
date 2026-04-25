@@ -189,10 +189,6 @@
             <h2>❓ 常见问题</h2>
             <div class="faq-item">
                 <strong>Q: 这本书适合什么样的人？</strong>
-                <p>A: 只要你经常在家办公或学习，容易被分心困扰，这本书就适合你。</p >
-            </div>
-            <div class="faq-item">
-                <strong>Q: 购买后如何收到电子书？</strong>
 <!-- 支付弹窗 -->
 <div id="qrModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
   <div style="background:#fff; padding:25px; border-radius:16px; max-width:320px; width:90%; text-align:center; position:relative;">
@@ -206,6 +202,11 @@
     <button onclick="closeQR()" style="margin-top:20px; padding:10px 25px; background:#eee; border:none; border-radius:8px; cursor:pointer;">关闭</button>
   </div>
 </div>
+<p>A: 只要你经常在家办公或学习，容易被分心困扰，这本书就适合你。</p >
+            </div>
+            <div class="faq-item">
+                <strong>Q: 购买后如何收到电子书？</strong>
+
 <p>A: 支付成功后，系统会将 PDF 电子书发送到您的邮箱。如果没有收到，请检查垃圾箱。</p >
             </div>
             <div class="faq-item">

@@ -1,113 +1,95 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微表情识人术 - 瞬间捕捉情绪的秘密</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        /* 全局样式 */
-        body {
-            font-family: "PingFang SC", "Microsoft Yahei", sans-serif;
-            background-color: #1E80FF; /* 整页纯蓝色背景 */
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        /* 封面区域（纯蓝色，无任何多余元素） */
-        .cover {
-            width: 100%;
-            max-width: 700px;
-            background-color: #1E80FF; /* 纯蓝色封面 */
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .book-title {
-            font-size: 3.8rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-        .book-subtitle {
-            font-size: 1.6rem;
-            opacity: 0.9;
-        }
-        /* 内容介绍区域（半透明白色背景） */
-        .content {
-            background: rgba(255,255,255,0.15);
-            padding: 2.5rem;
-            border-radius: 16px;
-            backdrop-filter: blur(8px);
-            max-width: 700px;
-            margin-bottom: 2rem;
-        }
-        .content p {
-            margin: 1.2rem 0;
-            line-height: 1.8;
-            font-size: 1.15rem;
-        }
-        /* 收款二维码区域（独立模块，不影响封面） */
-        .qrcode-box {
-            background: rgba(255,255,255,0.95);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            text-align: center;
-            max-width: 300px;
-            margin-bottom: 2rem;
-        }
-        .qrcode-box img {
-            width: 220px;
-            height: 340px;
-            border-radius: 12px;
-            border: 3px solid #1E80FF;
-        }
-        .qrcode-tip {
-            font-size: 1.1rem;
-            margin-top: 0.8rem;
-            color: #333;
-        }
-        /* 页脚（底部已留白，不贴边） */
-        .footer {
-            margin-top: auto; /* 自动推到页面底部 */
-            margin-bottom: 2rem; /* 底部留白，避免贴边 */
-            font-size: 0.95rem;
-            opacity: 0.7;
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>微表情识人术 - 完整版电子书</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #1E80FF;
+    color: #fff;
+    font-family: "微软雅黑",sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+    line-height: 2.2;
+}
+.title-box{
+    margin: 40px 0;
+}
+.title-box h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.title-box p{
+    font-size: 20px;
+    opacity: 0.9;
+}
+.desc-box{
+    max-width: 650px;
+    margin: 0 auto 50px;
+    background: rgba(255,255,255,0.15);
+    padding: 30px 25px;
+    border-radius: 18px;
+    font-size: 18px;
+}
+.desc-box h3{
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+.qr-box{
+    background: #ffffff;
+    display: inline-block;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    margin-bottom: 60px;
+}
+.qr-box img{
+    width: 220px;
+    border-radius: 10px;
+}
+.qr-tip{
+    color: #333;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.footer{
+    margin-bottom: 30px;
+    opacity: 0.7;
+    font-size: 14px;
+}
+</style>
 </head>
 <body>
-    <!-- 纯蓝色封面 -->
-    <div class="cover">
-        <div class="book-title">微表情识人术</div>
-        <div class="book-subtitle">瞬间捕捉情绪的秘密</div>
-    </div>
 
-    <!-- 电子书内容介绍 -->
-    <div class="content">
-        <p>📖 本书教你通过细微表情，读懂他人真实情绪</p >
-        <p>💡 掌握职场、社交、亲密关系中的读心技巧</p >
-        <p>🎯 让你在人际交往中更通透、更有主动权</p >
-        <p>✨ 从眼神、嘴角、眉梢，拆解情绪密码</p >
-    </div>
+<div class="title-box">
+    <h1>微表情识人术</h1>
+    <p>完整版高清电子书 · 一眼看透人心</p >
+</div>
 
-    <!-- 收款二维码（独立模块，不放在封面上） -->
-    <div class="qrcode-box">
-        < img src="qrcode.png" alt="农行收款二维码">
-        <div class="qrcode-tip">📱 扫码付款，立即获取全书</div>
-    </div>
+<div class="desc-box">
+    <h3>本书介绍</h3>
+    <p>语言可以伪装，微表情无法隐藏</p >
+    <p>零基础快速掌握眼神、眉眼、嘴角、肢体识人技巧</p >
+    <p>适用于职场、社交、人情、恋爱、做生意谈客户</p >
+    <p>全书完整章节，排版清晰，可永久保存随时阅读</p >
+    <p>完整版PDF仅付费专属获取</p >
+</div>
 
-    <!-- 页脚（底部已留白） -->
-    <div class="footer">© 2026 河北龙杰启明传媒 出品</div>
+<div class="qr-box">
+    < img src="qrcode.png" alt="扫码付费购买">
+    <div class="qr-tip">扫码支付，付款后联系我发送完整电子书</div>
+</div>
+
+<div class="footer">
+© 2026 河北龙杰启明传媒 版权所有
+</div>
+
 </body>
 </html>

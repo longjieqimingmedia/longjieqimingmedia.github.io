@@ -3,92 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微表情识人术</title>
+    <title>微表情识人术 - 瞬间捕捉情绪的秘密</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", sans-serif; }
-        body { background: #f8f8f8; color: #333; }
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
-        header { background: #222; color: #fff; text-align: center; padding: 40px 20px; border-radius: 12px; margin-bottom: 30px; }
-        header h1 { font-size: 28px; margin-bottom: 10px; }
-        header p { opacity: 0.8; }
-        .book-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; }
-        .book-icon { font-size: 60px; margin-bottom: 20px; }
-        .book-title { font-size: 24px; font-weight: bold; color: #222; margin-bottom: 15px; }
-        .book-desc { font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 20px; }
-        .book-price { font-size: 26px; color: #e53935; font-weight: bold; margin: 25px 0; }
-        .buy-btn { padding: 14px 40px; background: #e53935; color: #fff; border: none; border-radius: 50px; font-size: 18px; cursor: pointer; }
-        .buy-btn:hover { background: #c62828; }
-        .section { background: #fff; border-radius: 12px; padding: 25px; margin: 30px 0; }
-        .section h2 { font-size: 20px; margin-bottom: 15px; color: #222; }
-        .section p { line-height: 1.8; color: #555; margin: 8px 0; }
-        footer { text-align: center; color: #999; font-size: 14px; padding: 20px 0; }
-
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; }
-        .modal-content { background: #fff; padding: 30px; border-radius: 16px; max-width: 320px; width: 90%; text-align: center; }
-        #qrcodeImg { width: 220px; height: 220px; display: block; margin: 15px auto; border-radius: 8px; }
-        .close-btn { margin-top: 15px; padding: 10px 30px; background: #eee; border: none; border-radius: 8px; cursor: pointer; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 全局样式 */
+        body {
+            font-family: "PingFang SC", "Microsoft Yahei", sans-serif;
+            background-color: #1E80FF; /* 整页纯蓝色背景 */
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        /* 封面区域（纯蓝色，无任何多余元素） */
+        .cover {
+            width: 100%;
+            max-width: 700px;
+            background-color: #1E80FF; /* 纯蓝色封面 */
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .book-title {
+            font-size: 3.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .book-subtitle {
+            font-size: 1.6rem;
+            opacity: 0.9;
+        }
+        /* 内容介绍区域（半透明白色背景） */
+        .content {
+            background: rgba(255,255,255,0.15);
+            padding: 2.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        .content p {
+            margin: 1.2rem 0;
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+        /* 收款二维码区域（独立模块，不影响封面） */
+        .qrcode-box {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            text-align: center;
+            max-width: 300px;
+            margin-bottom: 2rem;
+        }
+        .qrcode-box img {
+            width: 220px;
+            height: 340px;
+            border-radius: 12px;
+            border: 3px solid #1E80FF;
+        }
+        .qrcode-tip {
+            font-size: 1.1rem;
+            margin-top: 0.8rem;
+            color: #333;
+        }
+        /* 页脚（底部已留白，不贴边） */
+        .footer {
+            margin-top: auto; /* 自动推到页面底部 */
+            margin-bottom: 2rem; /* 底部留白，避免贴边 */
+            font-size: 0.95rem;
+            opacity: 0.7;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>微表情识人术</h1>
-            <p>读懂微表情，一眼看穿人心、想法与真实意图</p >
-        </header>
-
-        <div class="book-card">
-            <div class="book-icon">👁️</div>
-            <h2 class="book-title">微表情识人看透人心全集</h2>
-            <p class="book-desc">
-                从面部微表情、眼神、肢体动作、说话语气<br>
-                快速看穿他人内心想法、真实意愿、隐藏心思<br>
-                人际交往、识人用人、避开套路必备
-            </p >
-            <div class="book-price">限时仅售 ¥9.90</div>
-            <button class="buy-btn" onclick="openQR()">立即获取</button>
-        </div>
-
-        <div class="section">
-            <h2>📖 内容简介</h2>
-            <p>✅ 通过微表情，判断对方是真心还是假意</p >
-            <p>✅ 从眼神动作，看懂别人没说出口的心里话</p >
-            <p>✅ 看穿套路、防备小人、看懂人情世故</p >
-            <p>✅ 职场、交友、恋爱、做生意都能用</p >
-        </div>
-
-        <div class="section">
-            <h2>❓ 购买须知</h2>
-            <p>支付截图发送至邮箱：468404681@qq.com</p >
-            <p>几分钟内发送完整电子版 PDF</p >
-            <p>一次购买，永久随时翻看</p >
-        </div>
-
-        <footer>
-            © 2026 精品电子书合集
-        </footer>
+    <!-- 纯蓝色封面 -->
+    <div class="cover">
+        <div class="book-title">微表情识人术</div>
+        <div class="book-subtitle">瞬间捕捉情绪的秘密</div>
     </div>
 
-    <div id="qrModal" class="modal">
-        <div class="modal-content">
-            <h3>扫码支付 ¥9.90</h3>
-            <p>微信 / 支付宝 均可扫码</p >
-            < img src="https://raw.githubusercontent.com/longjieqimingmedia/longjieqimingmedia.github.io/main/WechatIMG71.jpg" alt="收款二维码" id="qrcodeImg">
-            <p style="font-size:13px;color:#666;">付款截图发邮箱，即刻发完整资料</p >
-            <button class="close-btn" onclick="closeQR()">关闭</button>
-        </div>
+    <!-- 电子书内容介绍 -->
+    <div class="content">
+        <p>📖 本书教你通过细微表情，读懂他人真实情绪</p >
+        <p>💡 掌握职场、社交、亲密关系中的读心技巧</p >
+        <p>🎯 让你在人际交往中更通透、更有主动权</p >
+        <p>✨ 从眼神、嘴角、眉梢，拆解情绪密码</p >
     </div>
 
-    <script>
-        function openQR() {
-            document.getElementById('qrModal').style.display = 'flex';
-        }
-        function closeQR() {
-            document.getElementById('qrModal').style.display = 'none';
-        }
-        window.onclick = function(e){
-            let m = document.getElementById('qrModal');
-            if(e.target === m) m.style.display = 'none';
-        }
-    </script>
+    <!-- 收款二维码（独立模块，不放在封面上） -->
+    <div class="qrcode-box">
+        < img src="qrcode.png" alt="农行收款二维码">
+        <div class="qrcode-tip">📱 扫码付款，立即获取全书</div>
+    </div>
+
+    <!-- 页脚（底部已留白） -->
+    <div class="footer">© 2026 河北龙杰启明传媒 出品</div>
 </body>
 </html>

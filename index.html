@@ -1,65 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>微表情识人术 · 7天速成手册</title>
     <style>
-        body { background: #1a1c26; font-family: 'Microsoft Yahei', sans-serif; padding: 20px; color: white; text-align: center; }
-        .cover { width: 100%; max-width: 500px; border-radius: 30px; margin: 0 auto 20px; display: block; }
-        .qr-area { background: #fff9ef; border-radius: 30px; padding: 16px; margin: 20px 0; }
-        .qr { width: 200px; margin: 10px auto; display: block; border-radius: 20px; }
-        button { background: #e67e22; padding: 14px 28px; font-size: 1.2rem; border: none; border-radius: 60px; color: white; margin: 10px; cursor: pointer; }
-        .handbook { filter: blur(5px); pointer-events: none; transition: 0.3s; text-align: left; max-width: 500px; margin: 20px auto; }
-        .unlocked { filter: blur(0); pointer-events: auto; }
-        .day { background: #2a2d3b; border-radius: 20px; padding: 15px; margin: 15px 0; border-left: 6px solid #f39c12; }
-        .day h3 { color: #f7d44a; }
-        .link-area { margin-top: 20px; }
-        .copy-btn { background: #2c3e50; color: #f1c40f; }
-        footer { margin-top: 40px; font-size: 12px; color: #aaa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #2b2e3a 0%, #1a1c26 100%);
+            font-family: 'Segoe UI', 'Microsoft Yahei', sans-serif;
+            padding: 20px;
+            color: #f0ede8;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .cover-image {
+            width: 100%;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .qr-area {
+            background: #fff9ef;
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .qr-area p {
+            color: #b45f2b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .qr-img {
+            width: 200px;
+            margin: 10px auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .pay-btn {
+            background: #e67e22;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 60px;
+            width: 80%;
+            cursor: pointer;
+            margin: 15px 0;
+            box-shadow: 0 5px 0 #b45a1c;
+        }
+        .handbook {
+            filter: blur(5px);
+            pointer-events: none;
+            transition: filter 0.3s;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .handbook.unlocked {
+            filter: blur(0);
+            pointer-events: auto;
+        }
+        .day-card {
+            background: #2a2d3b;
+            border-radius: 24px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 6px solid #f39c12;
+        }
+        .day-card h3 {
+            color: #f7d44a;
+            margin-bottom: 8px;
+        }
+        .day-card p {
+            color: #ddd;
+            line-height: 1.5;
+        }
+        .test {
+            background: #3e2a21;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .link-area {
+            margin: 20px 0;
+        }
+        .copy-btn {
+            background: #2c3e50;
+            color: #f1c40f;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #aaa;
+        }
+        .status {
+            margin: 10px;
+            font-size: 14px;
+        }
+        button:active {
+            transform: translateY(2px);
+        }
     </style>
 </head>
 <body>
-    < img class="cover" src="WechatIMG144.jpg" alt="封面">
+<div class="container">
+    <!-- 封面图片 -->
+    < img class="cover-image" src="WechatIMG144.jpg" alt="微表情识人术封面">
+
+    <!-- 真实收款码区域 -->
     <div class="qr-area">
-        <p>👇 长按下方收款码 支付 9.9 元 👇</p >
-        < img class="qr" src="shoukuanma.jpg" alt="收款码">
-        <p>微信/支付宝 长按识别</p >
+        <p>👇 长按下方【真实收款码】完成支付 9.9 元 👇</p >
+        < img class="qr-img" src="shoukuanma.jpg" alt="微信/支付宝收款码">
+        <p style="font-size:12px;">微信 / 支付宝 长按识别支付</p >
     </div>
-    <button id="unlockBtn">🔓 我已支付，解锁手册</button>
+
+    <!-- 解锁按钮 -->
+    <button class="pay-btn" id="unlockBtn">🔓 我已支付，解锁手册</button>
+    <div class="status" id="statusMsg">支付后点击按钮，永久解锁7天课程</div>
+
+    <!-- 7天手册内容（初始模糊） -->
     <div id="handbook" class="handbook">
-        <div class="day"><h3>📖 第1天 · 微表情基础</h3><p>微表情瞬间闪现，核心7种情绪。</p ></div>
-        <div class="day"><h3>👀 第2天 · 眼部信号</h3><p>真笑有鱼尾纹，假笑仅嘴角。</p ></div>
-        <div class="day"><h3>👄 第3天 · 嘴部下巴</h3><p>咬唇焦虑，嘴角单边上翘=轻蔑。</p ></div>
-        <div class="day"><h3>🤨 第4天 · 眉毛额头</h3><p>双眉上扬=惊讶，皱眉=困惑。</p ></div>
-        <div class="day"><h3>👃 第5天 · 鼻部脸颊</h3><p>鼻翼扩张=兴奋/愤怒，皱鼻=厌恶。</p ></div>
-        <div class="day"><h3>🧠 第6天 · 谎言识别</h3><p>假笑+肢体退缩+语言漏洞=欺骗。</p ></div>
-        <div class="day"><h3>🎯 第7天 · 实战应用</h3><p>观察摸鼻/摸颈，提升识人功力。</p ></div>
-        <div><p>📝 小测验答案：1B 2A</p ></div>
+        <div class="day-card">
+            <h3>📖 第1天 · 微表情基础解码</h3>
+            <p>微表情是瞬间闪现的面部动作，持续1/25~1/5秒。核心7种基本情绪。</p >
+        </div>
+        <div class="day-card">
+            <h3>👀 第2天 · 眼部微表情</h3>
+            <p>真笑时眼轮匝肌收缩产生鱼尾纹；假笑只有嘴角上扬。</p >
+        </div>
+        <div class="day-card">
+            <h3>👄 第3天 · 嘴部与下巴</h3>
+            <p>咬嘴唇代表焦虑；嘴角单侧上翘表示轻蔑。</p >
+        </div>
+        <div class="day-card">
+            <h3>🤨 第4天 · 眉毛与额头</h3>
+            <p>双眉上扬=惊讶，皱眉头=困惑或愤怒。</p >
+        </div>
+        <div class="day-card">
+            <h3>👃 第5天 · 鼻部与脸颊</h3>
+            <p>鼻翼扩张与兴奋/愤怒相关，皱鼻表示厌恶。</p >
+        </div>
+        <div class="day-card">
+            <h3>🧠 第6天 · 谎言识别</h3>
+            <p>集群分析：假笑+肢体退缩+语言漏洞=高欺骗概率。</p >
+        </div>
+        <div class="day-card">
+            <h3>🎯 第7天 · 实战应用</h3>
+            <p>商务谈判观察摸鼻/摸颈，一周提升30%识人功力。</p >
+        </div>
+        <div class="test">
+            <p><strong>🧪 小测验</strong><br>
+            1. 快速耸肩+嘴角不对称上翘？ A真心喜悦 B轻蔑 C恐惧 → B<br>
+            2. 阻断行为？ A用手遮嘴 B眼神直视 C张开双臂 → A</p >
+        </div>
     </div>
-    <div id="linkArea" style="display:none; margin-top:20px;">
-        <button class="copy-btn" id="copyBtn">🔗 复制专属链接</button>
-        <p id="linkDisplay" style="word-break:break-all; background:#13141c; padding:8px; border-radius:20px; margin-top:10px;"></p >
+
+    <!-- 专属链接区域（解锁后显示） -->
+    <div id="linkArea" style="display: none;" class="link-area">
+        <button class="copy-btn" id="copyBtn">🔗 复制我的专属链接</button>
+        <p id="linkDisplay" style="word-break: break-all; background: #13141c; padding: 10px; border-radius: 20px; margin-top: 10px;"></p >
     </div>
-    <footer>© 河北龙杰启明传媒 · 支付后永久解锁</footer>
-    <script>
-        if (localStorage.getItem('unlocked') === 'true') {
-            document.getElementById('handbook').classList.add('unlocked');
-            document.getElementById('unlockBtn').disabled = true;
-            document.getElementById('unlockBtn').innerText = '✔ 已解锁';
-            document.getElementById('linkArea').style.display = 'block';
-            document.getElementById('linkDisplay').innerHTML = window.location.href;
+
+    <footer>© 河北龙杰启明传媒 · 长按收款码支付9.9元后永久解锁全部内容</footer>
+</div>
+
+<script>
+    // 检查是否已解锁
+    let unlocked = localStorage.getItem('weibaio_unlocked') === 'true';
+    const handbook = document.getElementById('handbook');
+    const unlockBtn = document.getElementById('unlockBtn');
+    const linkArea = document.getElementById('linkArea');
+    const linkDisplay = document.getElementById('linkDisplay');
+    const copyBtn = document.getElementById('copyBtn');
+    const statusMsg = document.getElementById('statusMsg');
+
+    function updateUI() {
+        if (unlocked) {
+            handbook.classList.add('unlocked');
+            unlockBtn.disabled = true;
+            unlockBtn.innerText = '✔ 手册已激活';
+            unlockBtn.style.opacity = '0.6';
+            statusMsg.innerText = '✅ 手册已解锁！下方可复制链接，永久使用。';
+            linkArea.style.display = 'block';
+            linkDisplay.innerText = window.location.href;
+        } else {
+            handbook.classList.remove('unlocked');
+            unlockBtn.disabled = false;
+            unlockBtn.innerText = '🔓 我已支付，解锁手册';
+            statusMsg.innerText = '长按上方收款码支付9.9元后，点击按钮解锁。';
+            linkArea.style.display = 'none';
         }
-        document.getElementById('unlockBtn').onclick = function() {
-            if (confirm('请确认已通过上方收款码支付了9.9元？')) {
-                localStorage.setItem('unlocked', 'true');
-                location.reload();
-            }
-        };
-        document.getElementById('copyBtn') && document.getElementById('copyBtn').onclick = function() {
+    }
+
+    // 解锁按钮逻辑
+    unlockBtn.onclick = function() {
+        if (unlocked) {
+            alert('已经解锁过了，无需重复支付。');
+            return;
+        }
+        let confirmPay = confirm('请确认您已通过上方收款码完成9.9元支付？\n点击“确定”后永久解锁手册。');
+        if (confirmPay) {
+            localStorage.setItem('weibaio_unlocked', 'true');
+            unlocked = true;
+            updateUI();
+        } else {
+            alert('请先支付再点击解锁。');
+        }
+    };
+
+    // 复制链接按钮
+    if (copyBtn) {
+        copyBtn.onclick = function() {
             let url = window.location.href;
-            navigator.clipboard.writeText(url).then(() => alert('链接已复制！点开即看手册（本设备已解锁）'));
+            navigator.clipboard.writeText(url).then(() => {
+                alert('✅ 链接已复制！点开即可自动显示手册内容（本设备已解锁）。');
+            }).catch(() => {
+                alert('手动复制链接：' + url);
+            });
         };
-    </script>
+    }
+
+    updateUI();
+</script>
 </body>
 </html>

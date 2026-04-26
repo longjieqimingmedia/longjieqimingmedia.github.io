@@ -1,64 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>微表情识人术 · 7天速成手册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微表情识人术 | 7天速成手册</title>
     <style>
-        body { background: #1a1c26; font-family: 'Microsoft Yahei',sans-serif; padding: 20px; color: white; text-align: center; }
-        .cover { width: 100%; max-width: 500px; border-radius: 30px; margin-bottom: 20px; }
-        .qr-area { background: #fff9ef; border-radius: 30px; padding: 20px; margin: 20px 0; }
-        .qr-area p { color: #b45f2b; font-weight: bold; }
-        .qr { width: 200px; margin: 10px auto; display: block; border-radius: 20px; }
-        button { background: #e67e22; padding: 14px 28px; font-size: 1.2rem; border: none; border-radius: 60px; color: white; margin: 10px; cursor: pointer; }
-        .handbook { filter: blur(5px); pointer-events: none; transition: 0.3s; text-align: left; max-width: 500px; margin: 20px auto; }
-        .unlocked { filter: blur(0); pointer-events: auto; }
-        .day { background: #2a2d3b; border-radius: 20px; padding: 15px; margin: 15px 0; border-left: 6px solid #f39c12; }
-        .day h3 { color: #f7d44a; }
-        .link-area { margin-top: 20px; }
-        .copy-btn { background: #2c3e50; color: #f1c40f; }
-        footer { margin-top: 40px; font-size: 12px; color: #aaa; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "微软雅黑", sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cover {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        .unlock-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ff9500, #ff6b00);
+            color: #fff;
+            border: none;
+            padding: 18px;
+            border-radius: 16px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 32px;
+            box-shadow: 0 6px 16px rgba(255, 107, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .unlock-btn:disabled {
+            background: #ccc;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+        .manual-content {
+            display: none;
+            background: #fff;
+            color: #222;
+            padding: 32px;
+            border-radius: 20px;
+            line-height: 1.9;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        .manual-content h2 {
+            color: #0066cc;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .manual-content h3 {
+            color: #0066cc;
+            font-size: 22px;
+            margin: 24px 0 12px;
+        }
+        .manual-content p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .manual-content ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .manual-content li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            margin-top: 32px;
+        }
     </style>
 </head>
 <body>
-    < img class="cover" src="WechatIMG144.jpg" alt="封面">
-    <div class="qr-area">
-        <p>👇 长按下方收款码 支付 9.9 元 👇</p >
-        < img class="qr" src="shoukuanma.jpg" alt="收款码">
-        <p>微信/支付宝 长按识别</p >
+    <!-- 只保留144封面图（包含二维码） -->
+    < img class="cover" src="WechatIMG144.jpg" alt="微表情识人术封面">
+
+    <!-- 解锁按钮 -->
+    <button class="unlock-btn" id="unlockBtn">🔒 我已支付，解锁手册</button>
+
+    <!-- 微表情识人术完整资料（默认隐藏） -->
+    <div class="manual-content" id="manualContent">
+        <h2>《微表情识人术》7天速成手册</h2>
+        <h3>第1天：微表情基础认知</h3>
+        <p>微表情是人类无法完全控制的短暂面部动作，通常持续1/25秒，能真实反映内心情绪。核心微表情分为7类：快乐、悲伤、愤怒、恐惧、惊讶、厌恶、轻蔑。</p >
+        <ul>
+            <li>快乐：眼角出现鱼尾纹，嘴角上扬并向耳后拉伸</li>
+            <li>悲伤：眉头微蹙，嘴角下拉，眼睑下垂</li>
+            <li>愤怒：眉头紧锁，眼裂变窄，嘴唇紧绷</li>
+        </ul>
+        <h3>第2天：眼神与视线的心理密码</h3>
+        <p>眼神是判断情绪的关键窗口：</p >
+        <ul>
+            <li>回避眼神接触：可能在隐瞒信息或感到自卑</li>
+            <li>瞳孔放大：通常表示兴奋、感兴趣或恐惧</li>
+            <li>频繁眨眼：紧张、焦虑或注意力分散的表现</li>
+        </ul>
+        <h3>第3天：面部微动作解读</h3>
+        <p>面部细微动作往往暴露真实想法：</p >
+        <ul>
+            <li>单侧嘴角上扬：轻蔑或不屑的表现</li>
+            <li>鼻子皱起：对事物感到厌恶或反感</li>
+            <li>眉毛快速上扬：惊讶或表示认同</li>
+        </ul>
+        <h3>第4天：肢体语言的隐藏信号</h3>
+        <p>肢体动作比语言更诚实：</p >
+        <ul>
+            <li>双手抱胸：防御姿态，不愿敞开心扉</li>
+            <li>脚尖朝向：潜意识里想去的方向或感兴趣的人</li>
+            <li>频繁摸鼻子/耳朵：焦虑、说谎或自我安抚</li>
+        </ul>
+        <h3>第5天：声音与语气的情绪波动</h3>
+        <p>声音细节能泄露情绪变化：</p >
+        <ul>
+            <li>语速突然加快：兴奋、紧张或试图掩盖真相</li>
+            <li>音调升高：愤怒、激动或撒娇</li>
+            <li>语气停顿过长：思考、犹豫或说谎</li>
+        </ul>
+        <h3>第6天：场景实战应用</h3>
+        <p>在不同场景中快速识人：</p >
+        <ul>
+            <li>职场面试：观察对方是否频繁摸下巴（犹豫）或眼神坚定（自信）</li>
+            <li>社交场合：看对方是否身体前倾（感兴趣）或后仰（敷衍）</li>
+            <li>亲密关系：注意对方是否嘴角不自觉上扬（真心喜欢）</li>
+        </ul>
+        <h3>第7天：综合训练与进阶技巧</h3>
+        <p>每天10分钟训练，提升识人能力：</p >
+        <ul>
+            <li>看影视剧时静音，只靠表情和肢体判断角色情绪</li>
+            <li>和朋友聊天时，刻意观察对方微动作并验证</li>
+            <li>记录每天观察到的微表情，总结规律</li>
+        </ul>
     </div>
-    <button id="unlockBtn">🔓 我已支付，解锁手册</button>
-    <div id="handbook" class="handbook">
-        <div class="day"><h3>📖 第1天 · 微表情基础</h3><p>微表情瞬间闪现，核心7种情绪。</p ></div>
-        <div class="day"><h3>👀 第2天 · 眼部信号</h3><p>真笑有鱼尾纹，假笑仅嘴角。</p ></div>
-        <div class="day"><h3>👄 第3天 · 嘴部下巴</h3><p>咬唇焦虑，嘴角单边上翘=轻蔑。</p ></div>
-        <div class="day"><h3>🤨 第4天 · 眉毛额头</h3><p>双眉上扬=惊讶，皱眉=困惑。</p ></div>
-        <div class="day"><h3>👃 第5天 · 鼻部脸颊</h3><p>鼻翼扩张=兴奋/愤怒，皱鼻=厌恶。</p ></div>
-        <div class="day"><h3>🧠 第6天 · 谎言识别</h3><p>假笑+肢体退缩+语言漏洞=欺骗。</p ></div>
-        <div class="day"><h3>🎯 第7天 · 实战应用</h3><p>观察摸鼻/摸颈，提升识人功力。</p ></div>
-        <div><p>📝 小测验答案：1B 2A</p ></div>
+
+    <div class="footer">
+        © 2025 河北龙杰启明传媒 | 微表情识人术
     </div>
-    <div id="linkArea" style="display:none; margin-top:20px;">
-        <button class="copy-btn" id="copyBtn">🔗 复制专属链接</button>
-        <p id="linkDisplay" style="word-break:break-all; background:#13141c; padding:8px; border-radius:20px;"></p >
-    </div>
-    <footer>© 河北龙杰启明传媒 · 支付后永久解锁</footer>
+
     <script>
-        if (localStorage.getItem('unlocked') === 'true') {
-            document.getElementById('handbook').classList.add('unlocked');
-            document.getElementById('unlockBtn').disabled = true;
-            document.getElementById('unlockBtn').innerText = '✔ 已解锁';
-            document.getElementById('linkArea').style.display = 'block';
-            document.getElementById('linkDisplay').innerHTML = window.location.href;
-        }
-        document.getElementById('unlockBtn').onclick = function() {
-            if (confirm('请确认已通过上方收款码支付9.9元？')) {
-                localStorage.setItem('unlocked', 'true');
-                location.reload();
+        window.onload = function() {
+            if (localStorage.getItem('hasPaid') === 'true') {
+                document.getElementById('manualContent').style.display = 'block';
+                const btn = document.getElementById('unlockBtn');
+                btn.disabled = true;
+                btn.textContent = '✅ 已解锁完整手册';
             }
         };
-        document.getElementById('copyBtn') && (document.getElementById('copyBtn').onclick = function() {
-            navigator.clipboard.writeText(window.location.href).then(() => alert('链接已复制！'));
+        document.getElementById('unlockBtn').addEventListener('click', function() {
+            localStorage.setItem('hasPaid', 'true');
+            document.getElementById('manualContent').style.display = 'block';
+            this.disabled = true;
+            this.textContent = '✅ 已解锁完整手册';
+            alert('支付验证成功！下滑查看完整手册内容。');
+            window.scrollTo({ top: document.getElementById('manualContent').offsetTop - 20, behavior: 'smooth' });
         });
     </script>
 </body>

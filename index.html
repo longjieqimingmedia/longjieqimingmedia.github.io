@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>微表情识人术 · 7天速成手册</title>
+    <style>
+        body { background: #1a1c26; font-family: 'Microsoft Yahei',sans-serif; padding: 20px; color: white; text-align: center; }
+        .cover { width: 100%; max-width: 500px; border-radius: 30px; margin-bottom: 20px; }
+        .qr-area { background: #fff9ef; border-radius: 30px; padding: 20px; margin: 20px 0; }
+        .qr-area p { color: #b45f2b; font-weight: bold; }
+        .qr { width: 200px; margin: 10px auto; display: block; border-radius: 20px; }
+        button { background: #e67e22; padding: 14px 28px; font-size: 1.2rem; border: none; border-radius: 60px; color: white; margin: 10px; cursor: pointer; }
+        .handbook { filter: blur(5px); pointer-events: none; transition: 0.3s; text-align: left; max-width: 500px; margin: 20px auto; }
+        .unlocked { filter: blur(0); pointer-events: auto; }
+        .day { background: #2a2d3b; border-radius: 20px; padding: 15px; margin: 15px 0; border-left: 6px solid #f39c12; }
+        .day h3 { color: #f7d44a; }
+        .link-area { margin-top: 20px; }
+        .copy-btn { background: #2c3e50; color: #f1c40f; }
+        footer { margin-top: 40px; font-size: 12px; color: #aaa; }
+    </style>
+</head>
+<body>
+    < img class="cover" src="WechatIMG144.jpg" alt="封面">
+    <div class="qr-area">
+        <p>👇 长按下方收款码 支付 9.9 元 👇</p >
+        < img class="qr" src="shoukuanma.jpg" alt="收款码">
+        <p>微信/支付宝 长按识别</p >
+    </div>
+    <button id="unlockBtn">🔓 我已支付，解锁手册</button>
+    <div id="handbook" class="handbook">
+        <div class="day"><h3>📖 第1天 · 微表情基础</h3><p>微表情瞬间闪现，核心7种情绪。</p ></div>
+        <div class="day"><h3>👀 第2天 · 眼部信号</h3><p>真笑有鱼尾纹，假笑仅嘴角。</p ></div>
+        <div class="day"><h3>👄 第3天 · 嘴部下巴</h3><p>咬唇焦虑，嘴角单边上翘=轻蔑。</p ></div>
+        <div class="day"><h3>🤨 第4天 · 眉毛额头</h3><p>双眉上扬=惊讶，皱眉=困惑。</p ></div>
+        <div class="day"><h3>👃 第5天 · 鼻部脸颊</h3><p>鼻翼扩张=兴奋/愤怒，皱鼻=厌恶。</p ></div>
+        <div class="day"><h3>🧠 第6天 · 谎言识别</h3><p>假笑+肢体退缩+语言漏洞=欺骗。</p ></div>
+        <div class="day"><h3>🎯 第7天 · 实战应用</h3><p>观察摸鼻/摸颈，提升识人功力。</p ></div>
+        <div><p>📝 小测验答案：1B 2A</p ></div>
+    </div>
+    <div id="linkArea" style="display:none; margin-top:20px;">
+        <button class="copy-btn" id="copyBtn">🔗 复制专属链接</button>
+        <p id="linkDisplay" style="word-break:break-all; background:#13141c; padding:8px; border-radius:20px;"></p >
+    </div>
+    <footer>© 河北龙杰启明传媒 · 支付后永久解锁</footer>
+    <script>
+        if (localStorage.getItem('unlocked') === 'true') {
+            document.getElementById('handbook').classList.add('unlocked');
+            document.getElementById('unlockBtn').disabled = true;
+            document.getElementById('unlockBtn').innerText = '✔ 已解锁';
+            document.getElementById('linkArea').style.display = 'block';
+            document.getElementById('linkDisplay').innerHTML = window.location.href;
+        }
+        document.getElementById('unlockBtn').onclick = function() {
+            if (confirm('请确认已通过上方收款码支付9.9元？')) {
+                localStorage.setItem('unlocked', 'true');
+                location.reload();
+            }
+        };
+        document.getElementById('copyBtn') && (document.getElementById('copyBtn').onclick = function() {
+            navigator.clipboard.writeText(window.location.href).then(() => alert('链接已复制！'));
+        });
+    </script>
+</body>
+</html>

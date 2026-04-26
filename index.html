@@ -9,161 +9,114 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "PingFang SC", "微软雅黑", sans-serif;
+            font-family: "微软雅黑",sans-serif;
         }
         body {
-            background-color: #121212;
-            color: #fff;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
+            background: #111;
+            padding: 15px;
         }
-        .cover {
+        /* 只显示你那张成品封面 */
+        .top-cover {
             width: 100%;
-            border-radius: 16px;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-radius: 14px;
         }
         .unlock-btn {
             width: 100%;
-            background: linear-gradient(135deg, #ff9500, #ff6b00);
+            margin: 20px 0;
+            padding: 16px;
+            font-size: 20px;
+            background: #ff8800;
             color: #fff;
             border: none;
-            padding: 18px;
-            border-radius: 16px;
-            font-size: 22px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-bottom: 32px;
-            box-shadow: 0 6px 16px rgba(255, 107, 0, 0.3);
-            transition: all 0.3s ease;
+            border-radius: 12px;
         }
         .unlock-btn:disabled {
-            background: #ccc;
-            box-shadow: none;
-            cursor: not-allowed;
+            background: #666;
         }
-        .manual-content {
+        /* 资料默认隐藏 */
+        .info {
             display: none;
             background: #fff;
             color: #222;
-            padding: 32px;
-            border-radius: 20px;
-            line-height: 1.9;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 12px;
+            line-height: 1.8;
         }
-        .manual-content h2 {
-            color: #0066cc;
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .manual-content h3 {
-            color: #0066cc;
-            font-size: 22px;
-            margin: 24px 0 12px;
-        }
-        .manual-content p {
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-        .manual-content ul {
-            padding-left: 24px;
-            margin-bottom: 16px;
-        }
-        .manual-content li {
-            margin-bottom: 8px;
-        }
-        .footer {
-            text-align: center;
-            font-size: 14px;
-            color: #888;
-            margin-top: 32px;
+        .info h2{
+            text-align:center;
+            margin-bottom:15px;
+            color:#0066cc;
         }
     </style>
 </head>
 <body>
-    <!-- 只保留144封面图（包含二维码） -->
-    < img class="cover" src="WechatIMG144.jpg" alt="微表情识人术封面">
 
-    <!-- 解锁按钮 -->
-    <button class="unlock-btn" id="unlockBtn">🔒 我已支付，解锁手册</button>
+<!-- 就这一张封面图（自带二维码） -->
+< img class="top-cover" src="WechatIMG144.jpg">
 
-    <!-- 微表情识人术完整资料（默认隐藏） -->
-    <div class="manual-content" id="manualContent">
-        <h2>《微表情识人术》7天速成手册</h2>
-        <h3>第1天：微表情基础认知</h3>
-        <p>微表情是人类无法完全控制的短暂面部动作，通常持续1/25秒，能真实反映内心情绪。核心微表情分为7类：快乐、悲伤、愤怒、恐惧、惊讶、厌恶、轻蔑。</p >
-        <ul>
-            <li>快乐：眼角出现鱼尾纹，嘴角上扬并向耳后拉伸</li>
-            <li>悲伤：眉头微蹙，嘴角下拉，眼睑下垂</li>
-            <li>愤怒：眉头紧锁，眼裂变窄，嘴唇紧绷</li>
-        </ul>
-        <h3>第2天：眼神与视线的心理密码</h3>
-        <p>眼神是判断情绪的关键窗口：</p >
-        <ul>
-            <li>回避眼神接触：可能在隐瞒信息或感到自卑</li>
-            <li>瞳孔放大：通常表示兴奋、感兴趣或恐惧</li>
-            <li>频繁眨眼：紧张、焦虑或注意力分散的表现</li>
-        </ul>
-        <h3>第3天：面部微动作解读</h3>
-        <p>面部细微动作往往暴露真实想法：</p >
-        <ul>
-            <li>单侧嘴角上扬：轻蔑或不屑的表现</li>
-            <li>鼻子皱起：对事物感到厌恶或反感</li>
-            <li>眉毛快速上扬：惊讶或表示认同</li>
-        </ul>
-        <h3>第4天：肢体语言的隐藏信号</h3>
-        <p>肢体动作比语言更诚实：</p >
-        <ul>
-            <li>双手抱胸：防御姿态，不愿敞开心扉</li>
-            <li>脚尖朝向：潜意识里想去的方向或感兴趣的人</li>
-            <li>频繁摸鼻子/耳朵：焦虑、说谎或自我安抚</li>
-        </ul>
-        <h3>第5天：声音与语气的情绪波动</h3>
-        <p>声音细节能泄露情绪变化：</p >
-        <ul>
-            <li>语速突然加快：兴奋、紧张或试图掩盖真相</li>
-            <li>音调升高：愤怒、激动或撒娇</li>
-            <li>语气停顿过长：思考、犹豫或说谎</li>
-        </ul>
-        <h3>第6天：场景实战应用</h3>
-        <p>在不同场景中快速识人：</p >
-        <ul>
-            <li>职场面试：观察对方是否频繁摸下巴（犹豫）或眼神坚定（自信）</li>
-            <li>社交场合：看对方是否身体前倾（感兴趣）或后仰（敷衍）</li>
-            <li>亲密关系：注意对方是否嘴角不自觉上扬（真心喜欢）</li>
-        </ul>
-        <h3>第7天：综合训练与进阶技巧</h3>
-        <p>每天10分钟训练，提升识人能力：</p >
-        <ul>
-            <li>看影视剧时静音，只靠表情和肢体判断角色情绪</li>
-            <li>和朋友聊天时，刻意观察对方微动作并验证</li>
-            <li>记录每天观察到的微表情，总结规律</li>
-        </ul>
-    </div>
+<!-- 解锁按钮 -->
+<button class="unlock-btn" id="btn">🔒 我已付款，解锁完整资料</button>
 
-    <div class="footer">
-        © 2025 河北龙杰启明传媒 | 微表情识人术
-    </div>
+<!-- 付费后才看得见的厚厚的资料 -->
+<div class="info" id="content">
+<h2>《微表情识人术》7天完整版手册</h2>
 
-    <script>
-        window.onload = function() {
-            if (localStorage.getItem('hasPaid') === 'true') {
-                document.getElementById('manualContent').style.display = 'block';
-                const btn = document.getElementById('unlockBtn');
-                btn.disabled = true;
-                btn.textContent = '✅ 已解锁完整手册';
-            }
-        };
-        document.getElementById('unlockBtn').addEventListener('click', function() {
-            localStorage.setItem('hasPaid', 'true');
-            document.getElementById('manualContent').style.display = 'block';
-            this.disabled = true;
-            this.textContent = '✅ 已解锁完整手册';
-            alert('支付验证成功！下滑查看完整手册内容。');
-            window.scrollTo({ top: document.getElementById('manualContent').offsetTop - 20, behavior: 'smooth' });
-        });
-    </script>
+<h3>第一天：微表情核心入门</h3>
+<p>微表情是人下意识流露的真实情绪，伪装不了、掩饰不住，通常只有0.05秒到0.2秒。学会看微表情，你就能瞬间看懂别人心里真话、假话、好感、反感、紧张、隐瞒。</p >
+<p>七种基础情绪：快乐、悲伤、愤怒、恐惧、惊讶、厌恶、轻蔑。每一种都有固定面部肌肉动作，普通人看不懂，你学会就能一眼看穿。</p >
+
+<h3>第二天：眼神识人绝招</h3>
+<p>眼神往左看、往右看、往上看、往下看，代表完全不同心理。</p >
+<p>回避眼神＝心虚、隐瞒、不想说实话</p >
+<p>盯着你不放＝有好感、想掌控、试探你</p >
+<p>眨眼变快＝紧张、撒谎、压力大</p >
+<p>瞳孔放大＝感兴趣、喜欢、心动</p >
+
+<h3>第三天：嘴巴与嘴角读心术</h3>
+<p>嘴角单边上扬＝看不起你、轻蔑、觉得你不行</p >
+<p>抿嘴闭嘴＝压抑情绪、不想多说、内心不满</p >
+<p>不自觉咬嘴唇＝纠结、犹豫、内心挣扎</p >
+<p>假笑只有嘴在笑，眼睛没变化；真笑眼角会皱。</p >
+
+<h3>第四天：肢体动作瞬间看透人心</h3>
+<p>抱手臂＝防备、抗拒、不想被说服</p >
+<p>身体前倾＝对你感兴趣、愿意听你说</p >
+<p>身体后倾＝无聊、敷衍、想结束聊天</p >
+<p>脚尖朝向门口＝想走、不想继续聊</p >
+<p>摸鼻子、摸耳朵＝撒谎、紧张、内心不安</p >
+
+<h3>第五天：语气语速识人法</h3>
+<p>突然语速变快＝紧张、撒谎、急于掩饰</p >
+<p>突然变慢＝认真、生气、慎重</p >
+<p>声音变尖＝激动、情绪化</p >
+<p>声音变低＝难过、愧疚、温柔走心</p >
+
+<h3>第六天：社交、职场、恋爱实战</h3>
+<p>职场：同事哪些话是客套、哪些话是真心、哪些在挖坑，一眼识别。</p >
+<p>社交：别人是不是喜欢你、是不是敷衍你、是不是看不起你，不用猜。</p >
+<p>恋爱：对方是不是真心、是不是敷衍、是不是暧昧养鱼，微表情全部暴露。</p >
+
+<h3>第七天：7天训练法，练成识人高手</h3>
+<p>每天10分钟，看视频静音观察表情、生活中观察路人、朋友聊天观察微动作，7天就能练成普通人没有的读心能力。</p >
+<p>从此不用再猜人心，看人一看一个准，少被坑、少被骗、看懂人情世故。</p >
+
+</div>
+
+<script>
+// 清除你之前的测试记录，别人打开默认看不到资料
+localStorage.removeItem('paid');
+
+let btn = document.getElementById('btn');
+let content = document.getElementById('content');
+
+btn.onclick = function(){
+    localStorage.setItem('paid','1');
+    content.style.display = 'block';
+    btn.disabled = true;
+    btn.innerText = '✅ 已解锁完整资料';
+    alert('解锁成功，下滑查看完整版手册！');
+}
+</script>
+
 </body>
 </html>

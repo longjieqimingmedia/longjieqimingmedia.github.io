@@ -3,120 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微表情识人术 | 7天速成手册</title>
+    <title>微表情识人术 - 7天速成手册</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "微软雅黑",sans-serif;
-        }
-        body {
-            background: #111;
-            padding: 15px;
-        }
-        /* 只显示你那张成品封面 */
-        .top-cover {
-            width: 100%;
-            border-radius: 14px;
-        }
+        * {margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei,sans-serif;}
+        body {background:#000;color:#fff;padding:20px;text-align:center;}
+        .top-cover {width:100%;height:auto;border-radius:8px;margin-bottom:30px;}
         .unlock-btn {
-            width: 100%;
-            margin: 20px 0;
-            padding: 16px;
-            font-size: 20px;
-            background: #ff8800;
-            color: #fff;
-            border: none;
-            border-radius: 12px;
+            display:block;
+            width:90%;
+            max-width:400px;
+            margin:30px auto;
+            padding:15px;
+            background:#ff7a00;
+            color:#fff;
+            border:none;
+            border-radius:12px;
+            font-size:20px;
+            cursor:pointer;
         }
-        .unlock-btn:disabled {
-            background: #666;
-        }
-        /* 资料默认隐藏 */
-        .info {
-            display: none;
-            background: #fff;
-            color: #222;
-            padding: 20px;
-            border-radius: 12px;
-            line-height: 1.8;
-        }
-        .info h2{
-            text-align:center;
-            margin-bottom:15px;
-            color:#0066cc;
-        }
+        .content {display:none;margin-top:40px;padding:25px;background:#1a1a1a;border-radius:8px;line-height:1.8;text-align:left;}
+        .content h2 {color:#ff7a00;margin-bottom:20px;text-align:center;}
+        .day-title {color:#fff;margin:15px 0 10px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+        .day-title::after {content:"▼";font-size:12px;}
+        .day-content {display:none;margin-left:20px;}
+        .day-content.active {display:block;}
     </style>
 </head>
 <body>
-
-<!-- 就这一张封面图（自带二维码） -->
-< img class="top-cover" src="WechatIMG144.jpg">
-
-<!-- 解锁按钮 -->
-<button class="unlock-btn" id="btn">🔒 我已付款，解锁完整资料</button>
-
-<!-- 付费后才看得见的厚厚的资料 -->
-<div class="info" id="content">
-<h2>《微表情识人术》7天完整版手册</h2>
-
-<h3>第一天：微表情核心入门</h3>
-<p>微表情是人下意识流露的真实情绪，伪装不了、掩饰不住，通常只有0.05秒到0.2秒。学会看微表情，你就能瞬间看懂别人心里真话、假话、好感、反感、紧张、隐瞒。</p >
-<p>七种基础情绪：快乐、悲伤、愤怒、恐惧、惊讶、厌恶、轻蔑。每一种都有固定面部肌肉动作，普通人看不懂，你学会就能一眼看穿。</p >
-
-<h3>第二天：眼神识人绝招</h3>
-<p>眼神往左看、往右看、往上看、往下看，代表完全不同心理。</p >
-<p>回避眼神＝心虚、隐瞒、不想说实话</p >
-<p>盯着你不放＝有好感、想掌控、试探你</p >
-<p>眨眼变快＝紧张、撒谎、压力大</p >
-<p>瞳孔放大＝感兴趣、喜欢、心动</p >
-
-<h3>第三天：嘴巴与嘴角读心术</h3>
-<p>嘴角单边上扬＝看不起你、轻蔑、觉得你不行</p >
-<p>抿嘴闭嘴＝压抑情绪、不想多说、内心不满</p >
-<p>不自觉咬嘴唇＝纠结、犹豫、内心挣扎</p >
-<p>假笑只有嘴在笑，眼睛没变化；真笑眼角会皱。</p >
-
-<h3>第四天：肢体动作瞬间看透人心</h3>
-<p>抱手臂＝防备、抗拒、不想被说服</p >
-<p>身体前倾＝对你感兴趣、愿意听你说</p >
-<p>身体后倾＝无聊、敷衍、想结束聊天</p >
-<p>脚尖朝向门口＝想走、不想继续聊</p >
-<p>摸鼻子、摸耳朵＝撒谎、紧张、内心不安</p >
-
-<h3>第五天：语气语速识人法</h3>
-<p>突然语速变快＝紧张、撒谎、急于掩饰</p >
-<p>突然变慢＝认真、生气、慎重</p >
-<p>声音变尖＝激动、情绪化</p >
-<p>声音变低＝难过、愧疚、温柔走心</p >
-
-<h3>第六天：社交、职场、恋爱实战</h3>
-<p>职场：同事哪些话是客套、哪些话是真心、哪些在挖坑，一眼识别。</p >
-<p>社交：别人是不是喜欢你、是不是敷衍你、是不是看不起你，不用猜。</p >
-<p>恋爱：对方是不是真心、是不是敷衍、是不是暧昧养鱼，微表情全部暴露。</p >
-
-<h3>第七天：7天训练法，练成识人高手</h3>
-<p>每天10分钟，看视频静音观察表情、生活中观察路人、朋友聊天观察微动作，7天就能练成普通人没有的读心能力。</p >
-<p>从此不用再猜人心，看人一看一个准，少被坑、少被骗、看懂人情世故。</p >
-
-</div>
-
-<script>
-// 清除你之前的测试记录，别人打开默认看不到资料
-localStorage.removeItem('paid');
-
-let btn = document.getElementById('btn');
-let content = document.getElementById('content');
-
-btn.onclick = function(){
-    localStorage.setItem('paid','1');
-    content.style.display = 'block';
-    btn.disabled = true;
-    btn.innerText = '✅ 已解锁完整资料';
-    alert('解锁成功，下滑查看完整版手册！');
-}
-</script>
-
+    < img class="top-cover" src="WechatIMG144.jpg" alt="微表情识人术封面">
+    <button class="unlock-btn" onclick="unlockContent()">🔒 我已付款，解锁完整资料</button>
+    <div class="content" id="fullContent">
+        <h2>《微表情识人术》7天速成手册</h2>
+        <div class="day">
+            <div class="day-title" onclick="toggleDay(1)">第一天：微表情基础认知——识别喜怒哀乐的核心信号</div>
+            <div class="day-content" id="day1">
+                <p>微表情是人类无法完全控制的瞬间表情，持续时间仅0.04-0.5秒，却能暴露真实情绪。比如嘴角微微上扬可能是轻蔑，眉毛快速上扬可能是惊讶，而瞳孔放大往往意味着兴趣或恐惧。</p >
+                <p>核心技巧：关注「不对称表情」——真正的情绪通常是对称的，而伪装的表情往往一侧更明显。</p >
+            </div>
+        </div>
+        <div class="day">
+            <div class="day-title" onclick="toggleDay(2)">第二天：眼神与视线——看透对方真实意图的关键</div>
+            <div class="day-content" id="day2">
+                <p>眼神是心灵的窗口：回避眼神接触可能是心虚或紧张；频繁眨眼可能是焦虑或说谎；而凝视超过3秒则可能带有攻击性或好感。</p >
+                <p>视线方向也藏着秘密：向上看多是回忆，向下看多是思考或愧疚，向两侧看则可能在编造谎言。</p >
+            </div>
+        </div>
+        <div class="day">
+            <div class="day-title" onclick="toggleDay(3)">第三天：眉毛与嘴部表情——伪装与真实的博弈</div>
+            <div class="day-content" id="day3">
+                <p>眉毛的动作：皱眉头代表困惑或不满，抬眉毛表示惊讶或认同，而单眉上扬则是怀疑的信号。</p >
+                <p>嘴部细节：抿嘴是压抑情绪，咬嘴唇是焦虑，而嘴角下拉则是悲伤或不屑。假笑时眼角没有皱纹，真笑时眼角会出现「鱼尾纹」。</p >
+            </div>
+        </div>
+        <div class="day">
+            <div class="day-title" onclick="toggleDay(4)">第四天：肢体微动作——身体不会说谎</div>
+            <div class="day-content" id="day4">
+                <p>肢体动作比表情更诚实：交叉手臂是防御姿态，抖腿是不耐烦或紧张，摸鼻子/耳朵可能是在掩饰谎言，而脚尖指向往往暴露了内心想去的方向。</p >
+                <p>注意「冻结反应」：当人感到威胁时，会突然停止动作，这是最原始的自我保护本能。</p >
+            </div>
+        </div>
+        <div class="day">
+            <div class="day-title" onclick="toggleDay(5)">第五天：声音与语气——情绪的语音密码</div>
+            <div class="day-content" id="day5">
+                <p>语速：突然变慢可能是在编造谎言，变快则可能是焦虑或激动。</p >
+                <p>音调：升高表示兴奋或愤怒，降低则可能是悲伤或强调重点。</p >
+                <p>语气词：频繁使用「嗯」「啊」「这个」等词，可能是在拖延时间思考如何回答。</p >
+            </div>
+        </div>
+        <div class="day">
+            <div class="day-title" onclick="toggleDay(6)">第六天：场景化分析——职场、恋爱、社交中的识人技巧</div>
+            <div class="day-content" id="day6">
+                <p>职场：面试时频繁点头可能是敷衍，身体前倾代表感兴趣，而双手背在身后则是自信或权威的表现。</p >
+                <p>恋爱：约会时身体朝向对方、模仿对方动作，是好感的信号；而频繁看手机则可能是兴趣缺缺。</p >
+                <p>社交：聚会中站在角落的人往往内向，而主动搭话、手势夸张的人多是外向性格。</p >
+            </div>
+        </div>
+        <div class="day">
+            <div class="day-title" onclick="toggleDay(7)">第七天：综合实战——快速识人复盘与应用</div>
+            <div class="day-content" id="day7">
+                <p>今天我们把前6天的技巧整合起来，通过3个真实案例练习快速识人：</p >
+                <p>案例1：对方说话时眼神游离、摸鼻子，语速变慢——大概率在说谎。</p >
+                <p>案例2：同事开会时身体前倾、眼神专注、点头回应——对你的方案很感兴趣。</p >
+                <p>案例3：约会对象嘴角上扬、眼角有皱纹、身体朝向你——这是真心的微笑，对你有好感。</p >
+                <p>记住：微表情识人术不是读心术，而是通过观察细节，更准确地理解他人情绪，建立更好的人际关系。</p >
+            </div>
+        </div>
+    </div>
+    <script>
+        const CORRECT_CODE = "20260427";
+        function unlockContent() {
+            const inputCode = prompt("请输入解锁码：");
+            const contentDiv = document.getElementById("fullContent");
+            if (inputCode === CORRECT_CODE) {
+                contentDiv.style.display = "block";
+                alert("✅ 解锁成功！现在可以查看完整内容了");
+            } else {
+                alert("❌ 解锁码错误，请确认后重试");
+            }
+        }
+        function toggleDay(day) {
+            const content = document.getElementById(`day${day}`);
+            content.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>

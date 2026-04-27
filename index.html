@@ -1,62 +1,239 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<style>
-body{margin:0;padding:0;background:#f5f5f5;font-family:sans-serif;}
-.cover{width:85%;max-width:380px;margin:30px auto;display:block;border-radius:16px;}
-.paybox{background:#fff;margin:0 auto;max-width:380px;padding:20px;border-radius:12px;text-align:center;}
-.qrcode{width:180px;margin:15px auto;display:block;}
-input{width:85%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:16px;text-align:center;}
-button{width:85%;padding:12px;background:#007acc;color:#fff;border:none;border-radius:8px;font-size:16px;margin-top:10px;cursor:pointer;}
-.content{display:none;max-width:380px;margin:30px auto;padding:20px;background:#fff;border-radius:12px;line-height:1.8;}
-.content h2{color:#007acc;margin-top:0;}
-.content h3{color:#333;margin-bottom:10px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>微表情识人术 · 7天速成手册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #1a1c26;
+            font-family: 'Segoe UI', 'Microsoft Yahei', system-ui, sans-serif;
+            padding: 24px 16px 60px;
+            color: #f0ede8;
+        }
+        .container {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        /* 主封面图样式 - 您提供的完整图片 */
+        .master-cover {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 24px;
+            display: block;
+        }
+        /* 解锁区域卡片样式 */
+        .unlock-area {
+            background: rgba(255, 245, 225, 0.95);
+            border-radius: 32px;
+            padding: 24px 20px;
+            margin: 24px 0;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ffddb0;
+        }
+        .unlock-area p {
+            color: #5c3a1f;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .unlock-area input {
+            width: 80%;
+            padding: 14px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 60px;
+            text-align: center;
+            background: white;
+            border: 1px solid #e67e22;
+            margin: 10px 0;
+            font-family: inherit;
+        }
+        .unlock-area button {
+            background: #e67e22;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 60px;
+            cursor: pointer;
+            margin: 8px 0;
+            transition: 0.2s;
+            box-shadow: 0 4px 0 #b45a1c;
+        }
+        .unlock-area button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #b45a1c;
+        }
+        button:disabled, input:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .error-msg {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+        /* 手册内容样式 (初始隐藏) */
+        .handbook {
+            display: none;
+            background: #1f212e;
+            border-radius: 48px;
+            padding: 24px;
+            margin-top: 20px;
+            border: 1px solid #ffcf8a;
+        }
+        .handbook.show {
+            display: block;
+        }
+        .day-card {
+            background: #2a2d3b;
+            border-radius: 24px;
+            padding: 18px;
+            margin-bottom: 20px;
+            border-left: 8px solid #f39c12;
+        }
+        .day-title {
+            font-size: 1.5rem;
+            color: #f7d44a;
+            margin-bottom: 10px;
+        }
+        .day-desc {
+            line-height: 1.6;
+            color: #e7e5e5;
+        }
+        .test-box {
+            background: #3e2a21;
+            border-radius: 24px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            margin-top: 30px;
+            color: #aaa;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <!-- 第一步：展示完整的宣传封面图 -->
+    <!-- 封面图包含了“微表情识人术”、价格、收款码等信息 -->
+    <img class="master-cover" src="WechatIMG144.jpg" alt="微表情识人术宣传封面">
 
-<!-- 封面图：和你仓库文件名完全一致 -->
-<img class="cover" src="WechatIMG144.jpg" alt="微表情识人术笑脸封面">
+    <!-- 第二步：用户支付后，在此处输入解锁码 -->
+    <div class="unlock-area">
+        <p>✅ 扫码支付后，联系客服领取<b>6位解锁码</b></p >
+        <input type="text" id="unlockCode" placeholder="请输入解锁码" autocomplete="off">
+        <br>
+        <button id="unlockBtn">🔓 解锁7天完整手册</button>
+        <div id="errorMsg" class="error-msg"></div>
+    </div>
 
-<div class="paybox">
-<p>扫码支付 9.9 元后，输入解锁码查看完整内容</p >
-<!-- 收款码：和你仓库文件名完全一致 -->
-<img class="qrcode" src="shoukuanma.jpg" alt="收款码">
-<input type="text" id="pwd" placeholder="请输入解锁码">
-<button onclick="unlock()">解锁内容</button>
-</div>
+    <!-- 第三步：解锁后显示的完整课程内容（初始隐藏） -->
+    <div id="handbook" class="handbook">
+        <div class="day-card">
+            <div class="day-title">📖 第1天 · 微表情基础解码</div>
+            <div class="day-desc">
+                微表情是瞬间闪现的面部动作，持续1/25~1/5秒。核心7种基本情绪：愉悦、悲伤、愤怒、恐惧、惊讶、厌恶、轻蔑。<br>
+                ✨ 今日练习：观察身边人的快速表情转变，尝试捕捉0.2秒内的变化。掌握“基线反应”——先了解对方常态表情。
+            </div>
+        </div>
+        <div class="day-card">
+            <div class="day-title">👀 第2天 · 眼部微表情</div>
+            <div class="day-desc">
+                眼睛是心灵之窗：真笑时眼轮匝肌收缩产生鱼尾纹 (杜兴微笑)；假笑只有嘴角上扬。<br>
+                ▶ 紧张时眨眼频率加快，瞳孔放大代表兴趣。压力下视线回避持续时间过长可能是谎言预兆。
+            </div>
+        </div>
+        <div class="day-card">
+            <div class="day-title">👄 第3天 · 嘴部与下巴信号</div>
+            <div class="day-desc">
+                咬嘴唇常代表焦虑或压抑；嘴角单侧上翘表示轻蔑；嘴唇紧缩可能是在忍耐。<br>
+                下巴微抬显自信或挑衅，下巴内收表示不安或防卫。练习识别抿嘴时的心理变化。
+            </div>
+        </div>
+        <div class="day-card">
+            <div class="day-title">🤨 第4天 · 眉毛与额头</div>
+            <div class="day-desc">
+                双眉上扬代表极度惊讶；皱眉头表达困惑或愤怒；单眉上扬表示怀疑或疑问。<br>
+                额头皱纹加深与压力/思考相关。快速抬眉(0.1秒)是一种强调或问候潜信号。
+            </div>
+        </div>
+        <div class="day-card">
+            <div class="day-title">👃 第5天 · 鼻部与脸颊动态</div>
+            <div class="day-desc">
+                鼻翼扩张常与愤怒/兴奋相关；皱鼻表示厌恶或反感，轻微皱鼻甚至自己都无意识。<br>
+                脸颊涨红(非温度)可能发自尴尬或强烈情绪，脸颊肌肉抖动是强忍眼泪或愤怒的表现。
+            </div>
+        </div>
+        <div class="day-card">
+            <div class="day-title">🧠 第6天 · 综合判断与谎言识别</div>
+            <div class="day-desc">
+                单一微表情准确率仅50~60%，需结合集群: 如假笑+肢体退缩+语言漏洞 = 高欺骗概率。<br>
+                黄金法则：基线对比→捕捉异常→情境分析。今日推荐: 观看访谈节目并静音预判情绪。
+            </div>
+        </div>
+        <div class="day-card">
+            <div class="day-title">🎯 第7天 · 实战应用与训练</div>
+            <div class="day-desc">
+                商务谈判: 观察对方不经意地摸鼻/摸颈，快速调整话术。亲密关系: 辨识真实情绪防止误解。<br>
+                终极训练法：每天花10分钟"表情快闪"视频分析，记录准确率，一周内提升30%识人功力。
+            </div>
+        </div>
+        <div class="test-box">
+            <div class="test-question">🧪 【微表情小测验】</div>
+            <div class="day-desc" style="margin-bottom:8px;">1. 对方和你交流时快速耸肩 + 嘴角不对称上翘，最可能表达？ <br> A. 真心喜悦  B. 轻蔑/不以为然  C. 恐惧</div>
+            <div class="day-desc" style="margin-bottom:8px;">2. 哪种属于“阻断行为”，常伴随焦虑或说谎？<br> A. 用手遮嘴  B. 眼神直视  C. 张开双臂</div>
+            <div class="day-desc">✅ 答案：1-B  2-A</div>
+        </div>
+        <div style="text-align:center; margin-top: 20px;">⭐ 每日复盘，七日即成识人高手 ⭐</div>
+    </div>
 
-<!-- 👇 这里就是你的正文内容，解锁后会显示👇 -->
-<div class="content" id="book">
-  <h2>《微表情识人术》7天速成手册</h2>
-  
-  <h3>第一章：微表情基础认知</h3>
-  <p>微表情是人类在受到刺激时，面部肌肉不受意识控制而产生的短暂表情，通常持续时间不到1秒。它能真实反映人们内心的情绪，是识人辨人的重要线索。</p >
-  
-  <h3>第二章：常见微表情解读</h3>
-  <p>1. 嘴角单侧上扬：代表轻蔑或不屑，通常出现在对他人观点不认同的场景中。<br>
-  2. 眉毛快速上扬：表示惊讶或惊喜，是对意外信息的本能反应。<br>
-  3. 眼神躲闪+嘴角紧绷：大概率是在说谎，试图掩盖真实想法。<br>
-  4. 眨眼频率突然增加：可能是紧张、焦虑或有所隐瞒。</p >
-  
-  <h3>第三章：实战应用场景</h3>
-  <p>在商务谈判、人际交往中，通过观察对方的微表情，可以快速判断对方的真实态度，从而调整沟通策略，提升沟通效率。</p >
+    <footer>© 河北龙杰启明传媒 · 支付后联系客服获取解锁码</footer>
 </div>
 
 <script>
-function unlock(){
-    let val = document.getElementById("pwd").value.trim();
-    // 密码是 123456，输入后正文会显示
-    if(val === "123456"){
-        document.getElementById("book").style.display = "block";
-        alert("解锁成功！正文内容已显示");
-    }else{
-        alert("解锁码错误，请重新输入");
-    }
-}
-</script>
+    // 🔑 重要：请将下面的解锁码改成您准备发给付费用户的6位数字
+    const CORRECT_CODE = "888888";
 
+    const unlockBtn = document.getElementById('unlockBtn');
+    const codeInput = document.getElementById('unlockCode');
+    const handbookDiv = document.getElementById('handbook');
+    const errorSpan = document.getElementById('errorMsg');
+
+    // 检查用户之前是否已经解锁过（如果解锁过，则直接显示课程内容）
+    if (localStorage.getItem('handbook_unlocked') === 'true') {
+        handbookDiv.classList.add('show');
+        codeInput.disabled = true;
+        unlockBtn.disabled = true;
+        unlockBtn.innerText = '✅ 已解锁';
+    }
+
+    unlockBtn.addEventListener('click', function() {
+        const code = codeInput.value.trim();
+        if (code === CORRECT_CODE) {
+            // 解锁成功：显示课程内容，并记录解锁状态
+            handbookDiv.classList.add('show');
+            localStorage.setItem('handbook_unlocked', 'true');
+            errorSpan.innerText = '';
+            codeInput.disabled = true;
+            unlockBtn.disabled = true;
+            unlockBtn.innerText = '✅ 已解锁';
+        } else {
+            errorSpan.innerText = '❌ 解锁码错误，请核对后重新输入';
+            codeInput.value = '';
+            codeInput.focus();
+        }
+    });
+</script>
 </body>
 </html>

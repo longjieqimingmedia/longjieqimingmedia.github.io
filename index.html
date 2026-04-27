@@ -1,55 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微表情识人术 - 7天速成手册</title>
-    <style>
-        * {margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei,sans-serif;}
-        body {background:#fff;padding:20px;text-align:center;}
-        .cover {width:100%;max-width:400px;height:auto;border-radius:12px;margin:20px auto;display:block;}
-        .pay-tip {font-size:18px;margin:20px 0;color:#333;}
-        .unlock-input {padding:12px 15px;width:80%;max-width:300px;font-size:16px;border:1px solid #ddd;border-radius:8px;margin:15px 0;}
-        .unlock-btn {padding:12px 30px;background:#007aff;color:#fff;border:none;border-radius:8px;font-size:18px;cursor:pointer;}
-        .content {display:none;margin-top:30px;padding:25px;background:#f5f5f5;border-radius:12px;text-align:left;line-height:1.8;}
-        .content h2 {color:#2c3e50;text-align:center;margin-bottom:20px;}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+body{margin:0;padding:0;background:#f5f5f5;font-family:sans-serif;}
+.cover{width:85%;max-width:380px;margin:30px auto;display:block;border-radius:16px;}
+.paybox{background:#fff;margin:0 auto;max-width:380px;padding:20px;border-radius:12px;text-align:center;}
+.qrcode{width:180px;margin:15px auto;display:block;}
+input{width:85%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:16px;text-align:center;}
+button{width:85%;padding:12px;background:#007acc;color:#fff;border:none;border-radius:8px;font-size:16px;margin-top:10px;cursor:pointer;}
+.content{display:none;max-width:380px;margin:30px auto;padding:20px;background:#fff;border-radius:12px;}
+</style>
 </head>
 <body>
-    < img class="cover" src="WechatIMG144.jpg" alt="微表情识人术笑脸封面">
-    <p class="pay-tip">扫码支付 9.9 元后，输入解锁码查看完整内容</p >
-    <input type="text" class="unlock-input" id="unlockCode" placeholder="请输入解锁码">
-    <br>
-    <button class="unlock-btn" onclick="unlockContent()">解锁内容</button>
-    <div class="content" id="fullContent">
-        <h2>《微表情识人术》7天速成手册</h2>
-        <p>第一天：微表情基础认知——识别喜怒哀乐的核心信号</p >
-        <p>微表情是人类无法完全控制的瞬间表情，持续时间仅0.04-0.5秒，却能暴露真实情绪。比如嘴角微微上扬可能是轻蔑，眉毛快速上扬可能是惊讶，而瞳孔放大往往意味着兴趣或恐惧。</p >
-        <p>第二天：眼神与视线——看透对方真实意图的关键</p >
-        <p>眼神是心灵的窗口：回避眼神接触可能是心虚或紧张；频繁眨眼可能是焦虑或说谎；而凝视超过3秒则可能带有攻击性或好感。</p >
-        <p>第三天：眉毛与嘴部表情——伪装与真实的博弈</p >
-        <p>眉毛的动作：皱眉头代表困惑或不满，抬眉毛表示惊讶或认同，而单眉上扬则是怀疑的信号。</p >
-        <p>第四天：肢体微动作——身体不会说谎</p >
-        <p>肢体动作比表情更诚实：交叉手臂是防御姿态，抖腿是不耐烦或紧张，摸鼻子/耳朵可能是在掩饰谎言，而脚尖指向往往暴露了内心想去的方向。</p >
-        <p>第五天：声音与语气——情绪的语音密码</p >
-        <p>语速：突然变慢可能是在编造谎言，变快则可能是焦虑或激动。</p >
-        <p>第六天：场景化分析——职场、恋爱、社交中的识人技巧</p >
-        <p>职场：面试时频繁点头可能是敷衍，身体前倾代表感兴趣，而双手背在身后则是自信或权威的表现。</p >
-        <p>第七天：综合实战——快速识人复盘与应用</p >
-        <p>记住：微表情识人术不是读心术，而是通过观察细节，更准确地理解他人情绪，建立更好的人际关系。</p >
-    </div>
-    <script>
-        const CORRECT_CODE = "20260427";
-        function unlockContent() {
-            const input = document.getElementById("unlockCode").value;
-            const content = document.getElementById("fullContent");
-            if(input === CORRECT_CODE) {
-                content.style.display = "block";
-                alert("✅ 解锁成功！");
-            } else {
-                alert("❌ 解锁码错误，请重试");
-            }
-        }
-    </script>
+
+<!-- 正确的封面图标签 -->
+< img class="cover" src="WechatIMG144.jpg" alt="微表情识人术笑脸封面">
+
+<div class="paybox">
+<p>扫码支付 9.9 元后，输入解锁码查看完整内容</p >
+< img class="qrcode" src="shoukuanma.jpg" alt="收款码">
+<input type="text" id="pwd" placeholder="请输入解锁码">
+<button onclick="unlock()">解锁内容</button>
+</div>
+
+<div class="content" id="book">
+</div>
+
+<script>
+function unlock(){
+    let val = document.getElementById("pwd").value.trim();
+    if(val === "123456"){
+        document.getElementById("book").style.display = "block";
+        alert("解锁成功");
+    }else{
+        alert("解锁码错误");
+    }
+}
+</script>
+
 </body>
 </html>

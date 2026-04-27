@@ -10,32 +10,50 @@ body{margin:0;padding:0;background:#f5f5f5;font-family:sans-serif;}
 .qrcode{width:180px;margin:15px auto;display:block;}
 input{width:85%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:16px;text-align:center;}
 button{width:85%;padding:12px;background:#007acc;color:#fff;border:none;border-radius:8px;font-size:16px;margin-top:10px;cursor:pointer;}
-.content{display:none;max-width:380px;margin:30px auto;padding:20px;background:#fff;border-radius:12px;}
+.content{display:none;max-width:380px;margin:30px auto;padding:20px;background:#fff;border-radius:12px;line-height:1.8;}
+.content h2{color:#007acc;margin-top:0;}
+.content h3{color:#333;margin-bottom:10px;}
 </style>
 </head>
 <body>
 
-<!-- 正确的封面图标签 -->
+<!-- 封面图：和你仓库文件名完全一致 -->
 <img class="cover" src="WechatIMG144.jpg" alt="微表情识人术笑脸封面">
 
 <div class="paybox">
 <p>扫码支付 9.9 元后，输入解锁码查看完整内容</p >
+<!-- 收款码：和你仓库文件名完全一致 -->
 <img class="qrcode" src="shoukuanma.jpg" alt="收款码">
 <input type="text" id="pwd" placeholder="请输入解锁码">
 <button onclick="unlock()">解锁内容</button>
 </div>
 
+<!-- 👇 这里就是你的正文内容，解锁后会显示👇 -->
 <div class="content" id="book">
+  <h2>《微表情识人术》7天速成手册</h2>
+  
+  <h3>第一章：微表情基础认知</h3>
+  <p>微表情是人类在受到刺激时，面部肌肉不受意识控制而产生的短暂表情，通常持续时间不到1秒。它能真实反映人们内心的情绪，是识人辨人的重要线索。</p >
+  
+  <h3>第二章：常见微表情解读</h3>
+  <p>1. 嘴角单侧上扬：代表轻蔑或不屑，通常出现在对他人观点不认同的场景中。<br>
+  2. 眉毛快速上扬：表示惊讶或惊喜，是对意外信息的本能反应。<br>
+  3. 眼神躲闪+嘴角紧绷：大概率是在说谎，试图掩盖真实想法。<br>
+  4. 眨眼频率突然增加：可能是紧张、焦虑或有所隐瞒。</p >
+  
+  <h3>第三章：实战应用场景</h3>
+  <p>在商务谈判、人际交往中，通过观察对方的微表情，可以快速判断对方的真实态度，从而调整沟通策略，提升沟通效率。</p >
 </div>
 
 <script>
 function unlock(){
     let val = document.getElementById("pwd").value.trim();
+    // 密码是 123456，输入后正文会显示
     if(val === "123456"){
         document.getElementById("book").style.display = "block";
-        alert("解锁成功");
+        alert("解锁成功！正文内容已显示");
     }else{
-        alert("解锁码错误");
+        alert("解锁码错误，请重新输入");
     }
 }
 </script>

@@ -1,99 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>微表情识人术 | 河北龙杰启明传媒</title>
-    <style>
-        body{
-            text-align:center;
-            padding:20px;
-            font-size:18px;
-            margin:0;
-            background:#f5f5f5;
-            font-family:"Microsoft Yahei",sans-serif;
-        }
-        .box{
-            max-width:600px;
-            margin:0 auto;
-            background:#fff;
-            padding:30px;
-            border-radius:12px;
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
-        }
-        .cover{
-            width:100%;
-            max-width:300px;
-            border-radius:8px;
-            margin-bottom:20px;
-        }
-        .qrcode{
-            width:150px;
-            height:150px;
-            margin:15px auto;
-            display:block;
-            border-radius:8px;
-        }
-        .btn{
-            display:inline-block;
-            padding:14px 35px;
-            background:#0066cc;
-            color:#fff;
-            text-decoration:none;
-            border-radius:8px
-            margin:20px 0;
-            font-weight:bold;
-        }
-        .btn:hover{
-            background:#0052a3;
-        }
-        h2{
-            color:#333;
-            margin-bottom:20px;
-        }
-        p{
-            line-height:1.7;
-            color:#555;
-            margin:10px 0;
-        }
-        .copyright{
-            font-size:14px;
-            color:#999;
-            margin-top:30px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>微表情识人技术</title>
 </head>
 <body>
-    <div class="box">
-        <!-- 封面：你原来叫啥就写啥，比如 封面.jpg、微表情.png -->
-        <img src="" class="cover" alt="书籍封面">
+<h2>微表情识人技术</h2>
+<p>价格：9.9元</p >
+<p>< img src="WechatIMG144.jpg" alt="封面" style="max-width:100%;"></p >
+<p>< img src="shoukuanma.jpg" alt="收款码" style="max-width:100%;"></p >
 
-        <h2>微表情识人术</h2>
-        <p>读懂面部微表情，看穿人心真实想法。</p >
-        <p>不用猜心思，通过细微表情、肢体动作，快速看懂身边人。</p >
-        <p>人际交往、职场沟通、识人交友都能用得上。</p >
-        <p>完整版高清资料，一次下载永久观看学习。</p >
+<p>请输入解锁码：</p >
+<input type="text" id="pwd" placeholder="输入密码">
+<button onclick="check()">解锁下载</button>
 
-        <!-- 下载按钮+解锁码 -->
-        <a href=" " class="btn" onclick="checkCode()">立即下载完整版</a >
+<p id="dl" style="display:none;">
+  <a href=" ">点击下载完整版资料</a >
+</p >
 
-        <p>扫码付款后获取解锁码</p >
-        <!-- 收款码：你原来叫啥就写啥，比如 收款码.png、微信.jpg -->
-        <img src="" class="qrcode" alt="收款二维码">
+<script>
+function check() {
+  if (document.getElementById('pwd').value === '龙杰20226') {
+    document.getElementById('dl').style.display = 'block';
+    alert('解锁成功！');
+  } else {
+    alert('密码错误，请重试');
+  }
+}
+</script>
 
-        <p class="copyright">© 2026 河北龙杰启明传媒 版权所有</p >
-    </div>
-
-    <script>
-        // 解锁码固定：longjie2026，你不用改
-        function checkCode(){
-            let code=prompt("请输入解锁码：");
-            if(code==="longjie2026"){
-                // 下载链接固定，你不用改
-                window.location.href="https://pan.baidu.com/s/1c2Q5W6eR7tY8uI9oP0aA";
-            }else{
-                alert("解锁码错误，请重新输入！");
-            }
-        }
-    </script>
 </body>
 </html>

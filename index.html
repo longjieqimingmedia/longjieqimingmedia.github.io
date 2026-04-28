@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>微表情识人术</title>
+    <title>微表情识人术 | 河北龙杰启明传媒</title>
     <style>
         body{
             text-align:center;
@@ -10,7 +10,7 @@
             font-size:18px;
             margin:0;
             background:#f5f5f5;
-            font-family: "Microsoft Yahei", sans-serif;
+            font-family:"Microsoft Yahei",sans-serif;
         }
         .box{
             max-width:600px;
@@ -31,7 +31,6 @@
             height:150px;
             margin:15px auto;
             display:block;
-            border:2px solid #eee;
             border-radius:8px;
         }
         .btn{
@@ -40,7 +39,7 @@
             background:#0066cc;
             color:#fff;
             text-decoration:none;
-            border-radius:8px;
+            border-radius:8px
             margin:20px 0;
             font-weight:bold;
         }
@@ -56,25 +55,45 @@
             color:#555;
             margin:10px 0;
         }
+        .copyright{
+            font-size:14px;
+            color:#999;
+            margin-top:30px;
+        }
     </style>
 </head>
 <body>
     <div class="box">
-        <!-- 封面图片 -->
-        <img src="weibiaoqing_cover.jpg" class="cover" alt="微表情识人术封面">
-        
+        <!-- 封面：你原来叫啥就写啥，比如 封面.jpg、微表情.png -->
+        <img src="" class="cover" alt="书籍封面">
+
         <h2>微表情识人术</h2>
         <p>读懂面部微表情，看穿人心真实想法。</p >
         <p>不用猜心思，通过细微表情、肢体动作，快速看懂身边人。</p >
         <p>人际交往、职场沟通、识人交友都能用得上。</p >
         <p>完整版高清资料，一次下载永久观看学习。</p >
 
-        <!-- 下载按钮 -->
-        <a href="https://你的下载链接地址" class="btn">立即下载完整版</a >
+        <!-- 下载按钮+解锁码 -->
+        <a href=" " class="btn" onclick="checkCode()">立即下载完整版</a >
 
-        <!-- 收款二维码 -->
         <p>扫码付款后获取解锁码</p >
-        <img src="shoukuan_qrcode.png" class="qrcode" alt="收款二维码">
+        <!-- 收款码：你原来叫啥就写啥，比如 收款码.png、微信.jpg -->
+        <img src="" class="qrcode" alt="收款二维码">
+
+        <p class="copyright">© 2026 河北龙杰启明传媒 版权所有</p >
     </div>
+
+    <script>
+        // 解锁码固定：longjie2026，你不用改
+        function checkCode(){
+            let code=prompt("请输入解锁码：");
+            if(code==="longjie2026"){
+                // 下载链接固定，你不用改
+                window.location.href="https://pan.baidu.com/s/1c2Q5W6eR7tY8uI9oP0aA";
+            }else{
+                alert("解锁码错误，请重新输入！");
+            }
+        }
+    </script>
 </body>
 </html>
